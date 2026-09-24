@@ -1,0 +1,374 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noma OS Case Study — Service Delivery & Business Diagnosis OS</title>
+    
+    <!-- Core Styling & Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            background-color: #09090b; 
+            color: #e4e4e7; 
+        }
+        h1, h2, h3, h4, .font-heading { 
+            font-family: 'Space Grotesk', sans-serif; 
+        }
+        pre, code, .font-mono { 
+            font-family: 'JetBrains Mono', monospace; 
+        }
+
+        /* Subtle grid background */
+        .bg-subtle-grid {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 2px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+    </style>
+</head>
+<body class="selection:bg-cyan-500/20 selection:text-cyan-200 antialiased bg-subtle-grid">
+
+    <!-- Case Study Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/80">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between text-xs font-mono">
+            <a href="https://15d.name.ng" target="_blank" class="font-heading font-bold text-white tracking-tight hover:text-zinc-300 transition-colors flex items-center gap-2 text-sm">
+                <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                PRECIOUS UBADIKE <span class="text-zinc-500 font-normal">/ Portfolio Case Study</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-zinc-400">
+                <a href="#overview" class="hover:text-white transition-colors">01. CONTEXT</a>
+                <a href="#problem" class="hover:text-white transition-colors">02. THE DIAGNOSIS</a>
+                <a href="#architecture" class="hover:text-white transition-colors">03. SYSTEM MODULES</a>
+                <a href="#live-system" class="hover:text-white transition-colors">04. LIVE INTERFACE</a>
+                <a href="#contact" class="hover:text-white transition-colors">05. CONTACT</a>
+            </nav>
+
+            <a href="https://15d.name.ng" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-zinc-200 bg-zinc-900 border border-zinc-700/80 rounded-md hover:bg-zinc-800 hover:text-white transition-all">
+                <span>Launch Noma</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-cyan-400"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-6 py-12 space-y-20">
+
+        <!-- Hero Title & Central Visual Showcase -->
+        <section class="space-y-8 pt-4">
+            <div class="space-y-4 max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 rounded-full">
+                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                    <span>FLAGSHIP SYSTEM CASE STUDY</span>
+                    <span class="text-zinc-600">•</span>
+                    <span class="text-zinc-400">PRODUCTION DEPLOYMENT</span>
+                </div>
+                
+                <h1 class="text-3xl sm:text-5xl font-heading font-bold text-white tracking-tight leading-tight">
+                    Noma OS: Service Delivery Operating System & Business Diagnosis Engine
+                </h1>
+
+                <p class="text-base sm:text-lg text-zinc-400 font-light leading-relaxed">
+                    An end-to-end operational engine designed to diagnose business bottlenecks, lock down scope changes with mathematical state controls, and streamline client collaboration from initial assessment through project delivery.
+                </p>
+            </div>
+
+            <!-- Main Product Hero Image Showcase -->
+            <div class="rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950 shadow-2xl">
+                <div class="bg-zinc-900/90 px-4 py-3 border-b border-zinc-800/80 flex items-center justify-between text-xs font-mono text-zinc-400">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-zinc-700 inline-block"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-zinc-700 inline-block"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-zinc-700 inline-block"></span>
+                        <span class="ml-2 text-zinc-300">Noma OS — Central Workspace Interface</span>
+                    </div>
+                    <span class="text-zinc-500">15d.name.ng</span>
+                </div>
+                <img src="https://uploads.onecompiler.io/44ptns9c4/452ukbya9/1000728127.png" 
+                     alt="Noma OS Central Workspace Interface" 
+                     class="w-full h-auto object-cover block">
+            </div>
+        </section>
+
+        <!-- Executive Metadata Bar -->
+        <section id="overview" class="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y border-zinc-800/80 text-xs font-mono">
+            <div>
+                <span class="text-zinc-500 uppercase block mb-1">Architecture Role</span>
+                <span class="text-zinc-200 font-medium">Principal Systems Architect</span>
+            </div>
+            <div>
+                <span class="text-zinc-500 uppercase block mb-1">System Type</span>
+                <span class="text-zinc-200 font-medium">Service Delivery & Diagnosis OS</span>
+            </div>
+            <div>
+                <span class="text-zinc-500 uppercase block mb-1">Core Tech Stack</span>
+                <span class="text-zinc-200 font-medium">Cloudflare Workers, Rust, WebRTC, Postgres</span>
+            </div>
+            <div>
+                <span class="text-zinc-500 uppercase block mb-1">Primary Impact</span>
+                <span class="text-cyan-400 font-medium">0 Unbilled Scope Additions</span>
+            </div>
+        </section>
+
+        <!-- Section 01: Deep Problem & Business Diagnosis Context -->
+        <section id="problem" class="space-y-8">
+            <div class="max-w-2xl space-y-3">
+                <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">01 / The Core Challenge</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white">Why High-Value Technical Delivery Fails</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-zinc-400 font-light leading-relaxed">
+                <div class="space-y-4 bg-zinc-950 p-6 rounded-xl border border-zinc-800/80">
+                    <h3 class="text-base font-heading font-semibold text-zinc-200 flex items-center gap-2">
+                        <i data-lucide="alert-triangle" class="w-4 h-4 text-rose-400"></i>
+                        Misaligned Onboarding & Diagnostic Void
+                    </h3>
+                    <p>
+                        Most digital project failures begin long before code is written. Without a structured diagnostic assessment tool during intake, client proposals are built on loose assumptions rather than explicit operational facts.
+                    </p>
+                    <p>
+                        This diagnostic void leads to mismatched deliverables, unclear milestone definitions, and continuous friction throughout the project lifecycle.
+                    </p>
+                </div>
+
+                <div class="space-y-4 bg-zinc-950 p-6 rounded-xl border border-zinc-800/80">
+                    <h3 class="text-base font-heading font-semibold text-zinc-200 flex items-center gap-2">
+                        <i data-lucide="trending-down" class="w-4 h-4 text-rose-400"></i>
+                        The "Casual Request" Scope Erosion
+                    </h3>
+                    <p>
+                        Scope creep rarely arrives in large, formal contract amendments. It occurs incrementally over informal messaging channels, unrecorded calls, and casual verbal additions.
+                    </p>
+                    <p>
+                        Engineering teams absorb these requests without commercial adjustments, eroding profit margins by 15% to 30% while confusing project accountability.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 02: Architecture & System Modules -->
+        <section id="architecture" class="space-y-8">
+            <div class="max-w-2xl space-y-3">
+                <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">02 / System Capabilities</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white">Noma OS Core Operating Modules</h2>
+                <p class="text-xs text-zinc-400 font-light">
+                    Noma OS integrates seven specialized execution layers into a single deterministic delivery pipeline.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Module 1: Business Diagnosis Engine -->
+                <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-3">
+                    <div class="w-8 h-8 rounded bg-zinc-900 border border-zinc-700/60 flex items-center justify-center text-xs font-mono text-cyan-400">01</div>
+                    <h3 class="text-base font-heading font-semibold text-white">Business Diagnosis Engine</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Features an automated <span class="font-mono text-zinc-200">/assessment</span> workflow that analyzes operational bottlenecks, generates tailored diagnostic insights, and issues a deterministic Project Access Code.
+                    </p>
+                </div>
+
+                <!-- Module 2: Project-As-Identity Authentication -->
+                <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-3">
+                    <div class="w-8 h-8 rounded bg-zinc-900 border border-zinc-700/60 flex items-center justify-center text-xs font-mono text-cyan-400">02</div>
+                    <h3 class="text-base font-heading font-semibold text-white">Project-As-Identity Auth</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Eliminates traditional user account barriers by using the <strong>Project Access Code</strong> as the primary security identity. Authentication is tied directly to the workspace state and project agreement.
+                    </p>
+                </div>
+
+                <!-- Module 3: Real-time Communication Suite -->
+                <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-3">
+                    <div class="w-8 h-8 rounded bg-zinc-900 border border-zinc-700/60 flex items-center justify-center text-xs font-mono text-cyan-400">03</div>
+                    <h3 class="text-base font-heading font-semibold text-white">Integrated Real-Time Hub</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Built-in project chat room powered by WebSockets, coupled with high-efficiency <strong>WebRTC VoIP voice, video calls, and screen sharing</strong> for immediate client-engineer alignment without third-party apps.
+                    </p>
+                </div>
+
+                <!-- Module 4: Scope & Milestone Engine -->
+                <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-3">
+                    <div class="w-8 h-8 rounded bg-zinc-900 border border-zinc-700/60 flex items-center justify-center text-xs font-mono text-cyan-400">04</div>
+                    <h3 class="text-base font-heading font-semibold text-white">Mathematical Scope Engine</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Calculates budget and timeline deltas for every change request before implementation. Deliverables remain gated under locked access keys until scope updates are formally approved.
+                    </p>
+                </div>
+
+                <!-- Module 5: Proposal & Onboarding Engine -->
+                <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-3">
+                    <div class="w-8 h-8 rounded bg-zinc-900 border border-zinc-700/60 flex items-center justify-center text-xs font-mono text-cyan-400">05</div>
+                    <h3 class="text-base font-heading font-semibold text-white">Proposals & Onboarding</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Generates dynamic, customizable client proposals directly from diagnostic data. Interactive onboarding forms collect required technical parameters and collateral in a structured flow.
+                    </p>
+                </div>
+
+                <!-- Module 6: CRM & Transactional Email Engine -->
+                <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-3">
+                    <div class="w-8 h-8 rounded bg-zinc-900 border border-zinc-700/60 flex items-center justify-center text-xs font-mono text-cyan-400">06</div>
+                    <h3 class="text-base font-heading font-semibold text-white">Embedded CRM & Dispatch</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Integrated client relational manager combined with an event-driven transactional email engine that dispatches automated notifications and audit records to all stakeholders instantly.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Collaboration Interface Image Showcase -->
+        <section class="space-y-4">
+            <div class="space-y-1">
+                <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">Communication Subsystem</span>
+                <h3 class="text-xl font-heading font-bold text-white">Real-Time Workspace Chat & Decision Room</h3>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950 shadow-2xl">
+                <div class="bg-zinc-900/90 px-4 py-2.5 border-b border-zinc-800/80 flex items-center justify-between text-xs font-mono text-zinc-500">
+                    <span>Noma OS — WebRTC & Real-time Chat Interface</span>
+                    <span class="text-cyan-400">Live Active Session</span>
+                </div>
+                <img src="https://uploads.onecompiler.io/44ptns9c4/453j7jymr/1000604396.jpg" 
+                     alt="Noma OS Chat Interface" 
+                     class="w-full h-auto object-cover block">
+            </div>
+        </section>
+
+        <!-- Section 03: Live Interface Embed Container -->
+        <section id="live-system" class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-zinc-800/80 pb-6">
+                <div class="space-y-2 max-w-xl">
+                    <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">03 / Live Interactive System</span>
+                    <h2 class="text-2xl font-heading font-bold text-white">Test Noma OS Live Environment</h2>
+                    <p class="text-xs text-zinc-400 font-light">
+                        Explore the live operational system directly in the embedded viewport below, hosted at <span class="text-zinc-200 font-mono">15d.name.ng</span>.
+                    </p>
+                </div>
+
+                <a href="https://15d.name.ng" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white border border-zinc-700 text-xs font-mono rounded-md transition-all self-start md:self-auto">
+                    <span>Open Fullscreen System</span>
+                    <i data-lucide="external-link" class="w-3.5 h-3.5 text-cyan-400"></i>
+                </a>
+            </div>
+
+            <!-- Minimalist Frame Container -->
+            <div class="rounded-xl border border-zinc-800 bg-zinc-950 overflow-hidden">
+                <!-- Top Browser Navigation Bar -->
+                <div class="bg-zinc-900/90 px-4 py-3 border-b border-zinc-800 flex items-center justify-between text-xs font-mono text-zinc-400">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                        <span class="text-zinc-300">Active Live Session</span>
+                    </div>
+                    <div class="bg-zinc-950 px-3 py-1 rounded border border-zinc-800 text-[11px] text-zinc-400 font-mono">
+                        https://15d.name.ng
+                    </div>
+                    <button id="reload-btn" class="hover:text-white transition-colors" title="Reload Frame">
+                        <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- iFrame Container -->
+                <div class="relative w-full h-[650px] bg-zinc-950">
+                    <iframe id="live-iframe" 
+                            src="https://15d.name.ng" 
+                            title="Noma OS Live Workspace" 
+                            class="w-full h-full border-0" 
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Code Architecture Snippet -->
+        <section class="space-y-6">
+            <div class="space-y-2">
+                <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">04 / Logic & State Management</span>
+                <h2 class="text-xl font-heading font-bold text-white">Project Access Code & Scope State Evaluator</h2>
+            </div>
+
+            <div class="rounded-lg border border-zinc-800 bg-zinc-950 p-6 overflow-x-auto text-xs font-mono text-zinc-300 leading-relaxed">
+<pre><code><span class="text-zinc-500">// Noma State Engine: Evaluates diagnosis assessment, issues project access code, and locks scope</span>
+<span class="text-cyan-400">pub struct</span> NomaWorkspaceSession {
+    <span class="text-cyan-400">pub</span> project_access_code: String,
+    <span class="text-cyan-400">pub</span> commercial_state: CommercialState,
+    <span class="text-cyan-400">pub</span> diagnosis_ref: String,
+}
+
+<span class="text-cyan-400">impl</span> NomaWorkspaceSession {
+    <span class="text-zinc-500">/// Evaluates new scope change requests against current project identity</span>
+    <span class="text-cyan-400">pub fn</span> evaluate_scope_change(&amp;<span class="text-cyan-400">mut self</span>, hours: f64, rate: f64) -&gt; (f64, String) {
+        <span class="text-cyan-400">let</span> cost_delta = hours * rate;
+        <span class="text-cyan-400">let</span> lock_key = format!(<span class="text-emerald-400">"LOCK-PROJ-{}-{:.0}"</span>, <span class="text-cyan-400">self</span>.project_access_code, cost_delta);
+        
+        <span class="text-cyan-400">self</span>.commercial_state = CommercialState::PendingApproval { delta: cost_delta };
+        (cost_delta, lock_key)
+    }
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- Section 05: Portfolio Contact Section -->
+        <section id="contact" class="pt-12 border-t border-zinc-800/80 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 mb-2 text-xs font-mono text-emerald-400">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Available for Executive Technology Leadership & Architecture Advisory</span>
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-heading font-bold text-white">Let's discuss your system architecture.</h3>
+                </div>
+
+                <a href="mailto:hello@preciousubadike.15d.name.ng" 
+                   class="px-6 py-3 bg-cyan-400 text-black text-xs font-mono font-bold uppercase rounded-full hover:bg-cyan-300 transition-all flex items-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>Contact CTO</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800/80 bg-zinc-950 py-12 mt-20">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6 text-xs font-mono text-zinc-500">
+            <div>
+                © 2026 PRECIOUS UBADIKE — PRINCIPAL SYSTEMS ARCHITECT
+            </div>
+            <div class="flex space-x-6">
+                <a href="https://15d.name.ng" target="_blank" class="hover:text-zinc-300 transition-colors">15d.name.ng</a>
+                <a href="https://github.com/15thdlogistics" target="_blank" class="hover:text-zinc-300 transition-colors">GitHub</a>
+                <a href="https://www.linkedin.com/in/precious-ubadike-853750435" target="_blank" class="hover:text-zinc-300 transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+
+            const reloadBtn = document.getElementById('reload-btn');
+            const iframe = document.getElementById('live-iframe');
+
+            if (reloadBtn && iframe) {
+                reloadBtn.addEventListener('click', () => {
+                    iframe.src = iframe.src;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+```
