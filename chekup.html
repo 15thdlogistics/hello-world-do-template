@@ -1,0 +1,387 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkup™ Platform Case Study — Healthcare Diagnostic Dispatch Infrastructure</title>
+    
+    <!-- Core Styling & Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            background-color: #09090b; 
+            color: #e4e4e7; 
+        }
+        h1, h2, h3, h4, .font-heading { 
+            font-family: 'Space Grotesk', sans-serif; 
+        }
+        pre, code, .font-mono { 
+            font-family: 'JetBrains Mono', monospace; 
+        }
+
+        /* Subtle grid background */
+        .bg-subtle-grid {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 2px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+    </style>
+</head>
+<body class="selection:bg-cyan-500/20 selection:text-cyan-200 antialiased bg-subtle-grid">
+
+    <!-- Case Study Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/80">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between text-xs font-mono">
+            <a href="https://whitetouch.15d.name.ng" target="_blank" class="font-heading font-bold text-white tracking-tight hover:text-zinc-300 transition-colors flex items-center gap-2 text-sm">
+                <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                PRECIOUS UBADIKE <span class="text-zinc-500 font-normal">/ Portfolio Case Study</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-zinc-400">
+                <a href="#overview" class="hover:text-white transition-colors">01. CONTEXT</a>
+                <a href="#problem" class="hover:text-white transition-colors">02. THE DIAGNOSIS</a>
+                <a href="#architecture" class="hover:text-white transition-colors">03. SYSTEM MODULES</a>
+                <a href="#live-system" class="hover:text-white transition-colors">04. LIVE INTERFACE</a>
+                <a href="#contact" class="hover:text-white transition-colors">05. CONTACT</a>
+            </nav>
+
+            <a href="https://whitetouch.15d.name.ng" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-zinc-200 bg-zinc-900 border border-zinc-700/80 rounded-md hover:bg-zinc-800 hover:text-white transition-all">
+                <span>Launch Checkup™</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-cyan-400"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-6 py-12 space-y-20">
+
+        <!-- Hero Title & Central Visual Showcase -->
+        <section class="space-y-8 pt-4">
+            <div class="space-y-4 max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 rounded-full">
+                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                    <span>HEALTHCARE DISPATCH SYSTEM</span>
+                    <span class="text-zinc-600">•</span>
+                    <span class="text-zinc-400">PRODUCTION DEPLOYMENT</span>
+                </div>
+                
+                <h1 class="text-3xl sm:text-5xl font-heading font-bold text-white tracking-tight leading-tight">
+                    Checkup™ Platform: Decentralized Diagnostic Dispatch Network & Lab Infrastructure
+                </h1>
+
+                <p class="text-base sm:text-lg text-zinc-400 font-light leading-relaxed">
+                    A distributed healthcare infrastructure bridging the gap between laboratories and patients. Enables lab partners to scale patient reach and revenue via a decentralized mobile collection network—without building physical lab facilities in every location.
+                </p>
+            </div>
+
+            <!-- Main Product Hero Image Showcase -->
+            <div class="rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950 shadow-2xl">
+                <div class="bg-zinc-900/90 px-4 py-3 border-b border-zinc-800/80 flex items-center justify-between text-xs font-mono text-zinc-400">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-zinc-700 inline-block"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-zinc-700 inline-block"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-zinc-700 inline-block"></span>
+                        <span class="ml-2 text-zinc-300">Checkup™ Platform — Diagnostic Command Center</span>
+                    </div>
+                    <span class="text-zinc-500">whitetouch.15d.name.ng</span>
+                </div>
+                <img src="https://uploads.onecompiler.io/44ptns9c4/4544psk4m/1000725456.png" 
+                     alt="Checkup Platform Diagnostic Command Center" 
+                     class="w-full h-auto object-cover block">
+            </div>
+        </section>
+
+        <!-- Executive Metadata Bar -->
+        <section id="overview" class="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y border-zinc-800/80 text-xs font-mono">
+            <div>
+                <span class="text-zinc-500 uppercase block mb-1">Architecture Role</span>
+                <span class="text-zinc-200 font-medium">Principal Systems Architect</span>
+            </div>
+            <div>
+                <span class="text-zinc-500 uppercase block mb-1">System Type</span>
+                <span class="text-zinc-200 font-medium">Diagnostic Dispatch Operating System</span>
+            </div>
+            <div>
+                <span class="text-zinc-500 uppercase block mb-1">Core Tech Stack</span>
+                <span class="text-zinc-200 font-medium">Cloudflare Workers, WebSockets, WebRTC, Geolocation</span>
+            </div>
+            <div>
+                <span class="text-zinc-500 uppercase block mb-1">Primary Impact</span>
+                <span class="text-cyan-400 font-medium">0 Physical Capital Overhead</span>
+            </div>
+        </section>
+
+        <!-- Section 01: Deep Problem & Industry Diagnosis Context -->
+        <section id="problem" class="space-y-8">
+            <div class="max-w-2xl space-y-3">
+                <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">01 / The Core Challenge</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white">Why Brick-and-Mortar Laboratory Expansion Fails</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-zinc-400 font-light leading-relaxed">
+                <div class="space-y-4 bg-zinc-950 p-6 rounded-xl border border-zinc-800/80">
+                    <h3 class="text-base font-heading font-semibold text-zinc-200 flex items-center gap-2">
+                        <i data-lucide="building-2" class="w-4 h-4 text-rose-400"></i>
+                        Prohibitive Real-Estate Capital Expenditure
+                    </h3>
+                    <p>
+                        For diagnostic laboratories, expanding patient reach traditionally meant leasing real estate, purchasing redundant clinical machinery, and staffing remote physical locations.
+                    </p>
+                    <p>
+                        This massive upfront cost leaves vast patient populations underserved and limits laboratory revenue potential to tight geographic radiuses surrounding their central processing facilities.
+                    </p>
+                </div>
+
+                <div class="space-y-4 bg-zinc-950 p-6 rounded-xl border border-zinc-800/80">
+                    <h3 class="text-base font-heading font-semibold text-zinc-200 flex items-center gap-2">
+                        <i data-lucide="shield-alert" class="w-4 h-4 text-rose-400"></i>
+                        Revenue Leakage & Unverified Field Operations
+                    </h3>
+                    <p>
+                        Mobile specimen collection without strict operational tracking creates severe vulnerabilities: unmonitored phlebotomist transit times, lost samples, off-book transactions, and staff theft.
+                    </p>
+                    <p>
+                        Without a unified dispatch layer with full chain-of-custody tracking, laboratories cannot confidently manage home specimen collection at scale.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 02: Architecture & System Modules -->
+        <section id="architecture" class="space-y-8">
+            <div class="max-w-2xl space-y-3">
+                <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">02 / System Capabilities</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white">Checkup™ Core Operating Modules</h2>
+                <p class="text-xs text-zinc-400 font-light">
+                    Checkup™ combines six specialized logistics and clinical layers into a unified diagnostic network.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Module 1: Smart Route & Matching Engine -->
+                <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-3">
+                    <div class="w-8 h-8 rounded bg-zinc-900 border border-zinc-700/60 flex items-center justify-center text-xs font-mono text-cyan-400">01</div>
+                    <h3 class="text-base font-heading font-semibold text-white">Geospatial Route Matching</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Automatically calculates optimal routing between patients, mobile phlebotomists, and accredited partner laboratories, factoring in proximity and specimen viability windows.
+                    </p>
+                </div>
+
+                <!-- Module 2: Decentralized Distribution Hub -->
+                <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-3">
+                    <div class="w-8 h-8 rounded bg-zinc-900 border border-zinc-700/60 flex items-center justify-center text-xs font-mono text-cyan-400">02</div>
+                    <h3 class="text-base font-heading font-semibold text-white">Decentralized Lab Expansion</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Turns qualified mobile phlebotomists into a distributed distribution unit. Central laboratories gain instant reach across entire cities without constructing new physical facilities.
+                    </p>
+                </div>
+
+                <!-- Module 3: In-App Chat & VoIP Suite -->
+                <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-3">
+                    <div class="w-8 h-8 rounded bg-zinc-900 border border-zinc-700/60 flex items-center justify-center text-xs font-mono text-cyan-400">03</div>
+                    <h3 class="text-base font-heading font-semibold text-white">WebRTC VoIP & Real-time Chat</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Facilitates privacy-compliant voice calls and WebSocket chat between patients, phlebotomists, and lab admin staff throughout the sample collection journey.
+                    </p>
+                </div>
+
+                <!-- Module 4: Administrative Command Center -->
+                <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-3">
+                    <div class="w-8 h-8 rounded bg-zinc-900 border border-zinc-700/60 flex items-center justify-center text-xs font-mono text-cyan-400">04</div>
+                    <h3 class="text-base font-heading font-semibold text-white">Admin Oversight Dashboard</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Gives laboratory managers live operational visibility into manual and automated assignments, status movements, active phlebotomist coordinates, and clinical outcomes.
+                    </p>
+                </div>
+
+                <!-- Module 5: Chain-of-Custody & Leakage Prevention -->
+                <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-3">
+                    <div class="w-8 h-8 rounded bg-zinc-900 border border-zinc-700/60 flex items-center justify-center text-xs font-mono text-cyan-400">05</div>
+                    <h3 class="text-base font-heading font-semibold text-white">Anti-Leakage Audit Trail</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Locks down specimen integrity and financial transactions through digital verification handshakes at collection, transit, lab intake, and diagnostic output.
+                    </p>
+                </div>
+
+                <!-- Module 6: Secure Patient Result Portal -->
+                <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-3">
+                    <div class="w-8 h-8 rounded bg-zinc-900 border border-zinc-700/60 flex items-center justify-center text-xs font-mono text-cyan-400">06</div>
+                    <h3 class="text-base font-heading font-semibold text-white">Automated Diagnostic Delivery</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Dispatches encrypted test results directly to patient accounts and ordering physicians as soon as laboratory processing completes, shortening turn-around time.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Secondary Visual Gallery Showcase -->
+        <section class="space-y-6">
+            <div class="space-y-1">
+                <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">Dispatch & Patient Viewports</span>
+                <h3 class="text-xl font-heading font-bold text-white">End-to-End Diagnostic Collection Workflows</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950 shadow-2xl">
+                    <div class="bg-zinc-900/90 px-4 py-2.5 border-b border-zinc-800/80 flex items-center justify-between text-xs font-mono text-zinc-500">
+                        <span>Patient Diagnostics Portal</span>
+                        <span class="text-cyan-400">Order & Collection</span>
+                    </div>
+                    <img src="https://uploads.onecompiler.io/44ptns9c4/452ukbya9/1000725455.png" 
+                         alt="Checkup Platform Patient View" 
+                         class="w-full h-auto object-cover block">
+                </div>
+
+                <div class="rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950 shadow-2xl">
+                    <div class="bg-zinc-900/90 px-4 py-2.5 border-b border-zinc-800/80 flex items-center justify-between text-xs font-mono text-zinc-500">
+                        <span>Lab Partner & Field Oversight</span>
+                        <span class="text-cyan-400">Live Dispatch</span>
+                    </div>
+                    <img src="https://uploads.onecompiler.io/44ptns9c4/452ukbya9/1000725440.png" 
+                         alt="Checkup Platform Secondary Interface" 
+                         class="w-full h-auto object-cover block">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 03: Live Interface Embed Container -->
+        <section id="live-system" class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-zinc-800/80 pb-6">
+                <div class="space-y-2 max-w-xl">
+                    <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">03 / Live Interactive System</span>
+                    <h2 class="text-2xl font-heading font-bold text-white">Test Checkup™ Live Environment</h2>
+                    <p class="text-xs text-zinc-400 font-light">
+                        Explore the operational dispatch system directly in the embedded viewport below, hosted live at <span class="text-zinc-200 font-mono">whitetouch.15d.name.ng</span>.
+                    </p>
+                </div>
+
+                <a href="https://whitetouch.15d.name.ng" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white border border-zinc-700 text-xs font-mono rounded-md transition-all self-start md:self-auto">
+                    <span>Open Fullscreen System</span>
+                    <i data-lucide="external-link" class="w-3.5 h-3.5 text-cyan-400"></i>
+                </a>
+            </div>
+
+            <!-- Minimalist Frame Container -->
+            <div class="rounded-xl border border-zinc-800 bg-zinc-950 overflow-hidden">
+                <!-- Top Browser Navigation Bar -->
+                <div class="bg-zinc-900/90 px-4 py-3 border-b border-zinc-800 flex items-center justify-between text-xs font-mono text-zinc-400">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                        <span class="text-zinc-300">Active Live Network</span>
+                    </div>
+                    <div class="bg-zinc-950 px-3 py-1 rounded border border-zinc-800 text-[11px] text-zinc-400 font-mono">
+                        https://whitetouch.15d.name.ng
+                    </div>
+                    <button id="reload-btn" class="hover:text-white transition-colors" title="Reload Frame">
+                        <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- iFrame Container -->
+                <div class="relative w-full h-[650px] bg-zinc-950">
+                    <iframe id="live-iframe" 
+                            src="https://whitetouch.15d.name.ng" 
+                            title="Checkup Live Platform" 
+                            class="w-full h-full border-0" 
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Code Architecture Snippet -->
+        <section class="space-y-6">
+            <div class="space-y-2">
+                <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">04 / Logic & Chain-of-Custody</span>
+                <h2 class="text-xl font-heading font-bold text-white">Geospatial Dispatch & Custody Verification Evaluator</h2>
+            </div>
+
+            <div class="rounded-lg border border-zinc-800 bg-zinc-950 p-6 overflow-x-auto text-xs font-mono text-zinc-300 leading-relaxed">
+<pre><code><span class="text-zinc-500">// Checkup Dispatch Engine: Matches patient collection request with nearest phlebotomist and target lab</span>
+<span class="text-cyan-400">pub struct</span> CollectionDispatchSession {
+    <span class="text-cyan-400">pub</span> dispatch_id: String,
+    <span class="text-cyan-400">pub</span> patient_coordinates: (f64, f64),
+    <span class="text-cyan-400">pub</span> target_lab_id: String,
+    <span class="text-cyan-400">pub</span> status: CollectionStatus,
+}
+
+<span class="text-cyan-400">impl</span> CollectionDispatchSession {
+    <span class="text-zinc-500">/// Verifies phlebotomist arrival and initiates specimen chain-of-custody tracking</span>
+    <span class="text-cyan-400">pub fn</span> verify_sample_collection(&amp;<span class="text-cyan-400">mut self</span>, phlebotomist_id: &amp;str, temp_celsius: f32) -&gt; (bool, String) {
+        <span class="text-cyan-400">let</span> timestamp = Chrono::utc_now();
+        <span class="text-cyan-400">let</span> verification_hash = format!(<span class="text-emerald-400">"CUSTODY-{}-{}-{:.1}"</span>, <span class="text-cyan-400">self</span>.dispatch_id, phlebotomist_id, temp_celsius);
+        
+        <span class="text-cyan-400">self</span>.status = CollectionStatus::InTransit { verified_at: timestamp };
+        (true, verification_hash)
+    }
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- Section 05: Portfolio Contact Section -->
+        <section id="contact" class="pt-12 border-t border-zinc-800/80 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 mb-2 text-xs font-mono text-emerald-400">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Available for Executive Technology Leadership & Architecture Advisory</span>
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-heading font-bold text-white">Let's discuss your healthcare architecture.</h3>
+                </div>
+
+                <a href="mailto:hello@preciousubadike.15d.name.ng" 
+                   class="px-6 py-3 bg-cyan-400 text-black text-xs font-mono font-bold uppercase rounded-full hover:bg-cyan-300 transition-all flex items-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>Contact CTO</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800/80 bg-zinc-950 py-12 mt-20">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6 text-xs font-mono text-zinc-500">
+            <div>
+                © 2026 PRECIOUS UBADIKE — PRINCIPAL SYSTEMS ARCHITECT
+            </div>
+            <div class="flex space-x-6">
+                <a href="https://whitetouch.15d.name.ng" target="_blank" class="hover:text-zinc-300 transition-colors">whitetouch.15d.name.ng</a>
+                <a href="https://github.com/15thdlogistics" target="_blank" class="hover:text-zinc-300 transition-colors">GitHub</a>
+                <a href="https://www.linkedin.com/in/precious-ubadike-853750435" target="_blank" class="hover:text-zinc-300 transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+
+            const reloadBtn = document.getElementById('reload-btn');
+            const iframe = document.getElementById('live-iframe');
+
+            if (reloadBtn && iframe) {
+                reloadBtn.addEventListener('click', () => {
+                    iframe.src = iframe.src;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+```
